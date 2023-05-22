@@ -1,0 +1,1 @@
+GET https://gnews.io/api/v4/top-headlines?category=general&max=3&lang=hi&apikey=ec8a1df338cca376771ebd8085a4494f
