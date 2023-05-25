@@ -1,0 +1,19 @@
+.navbar{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+}
+.navbar ul li{
+    padding: 6px 12px;
+    margin: 6px 12px ;
+    font-size: 16px;
+    font-weight: bold;
+}
+.navbar ul li :hover{
+    background-color: #888;
+    color: black;
+}
