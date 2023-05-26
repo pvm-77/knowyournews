@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+.loading-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 400px;
+  padding: 20px;
+}
+
+.loading-card-image {
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+}
+
+.loading-card-content {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.loading-card-title {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+}
+
+.loading-card-description {
+  width: 100%;
+  height: 16px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+}
+
+.loading-card-button {
+  width: 80px;
+  height: 30px;
+  background-color: #ddd;
+}
+
+.news-article {
+  /* Add your styles for the actual article content here */
+}
