@@ -40,55 +40,119 @@ import './components/news.css';
 // }
 
 
+// const Navbar = () => {
+//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+//   const toggleMobileMenu = () => {
+//     setIsMobileMenuOpen(!isMobileMenuOpen);
+//   };
+
+//   return (
+//     <div className="navbar">
+//       <div className="nav-brand-logo">
+//         <Link to="/">
+//           <img src={logo} alt="logo" width={80} height={80} />
+//         </Link>
+//       </div>
+
+//       <div className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+//         <ul className="nav-list">
+//           <li>
+//             <Link to="/business">business</Link>
+//           </li>
+//           <li>
+//             <Link to="/technology">technology</Link>
+//           </li>
+//           <li>
+//             <Link to="/sports">sports</Link>
+//           </li>
+//           <li>
+//             <Link to="/science">science</Link>
+//           </li>
+//           <li>
+//             <Link to="/health">health</Link>
+//           </li>
+//           <li>
+//             <Link to="/world">world</Link>
+//           </li>
+//           <li>
+//             <Link to="/nation">nation</Link>
+//           </li>
+//         </ul>
+//       </div>
+
+//       <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+//         <span className={`burger ${isMobileMenuOpen ? 'open' : ''}`}></span>
+//       </div>
+
+//       {/* Add the toggle theme and select language components here */}
+//     </div>
+//   );
+// };
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   return (
-    <div className="navbar">
+
+    <div className='navbar'>
       <div className="nav-brand-logo">
         <Link to="/">
           <img src={logo} alt="logo" width={80} height={80} />
         </Link>
       </div>
+      <div className='brand-name'>YourNews</div>
+      <ul>
+        <li>
+          <Link className='list-item' >business
+          </Link>
+        </li>
 
-      <div className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <ul className="nav-list">
-          <li>
-            <Link to="/business">business</Link>
-          </li>
-          <li>
-            <Link to="/technology">technology</Link>
-          </li>
-          <li>
-            <Link to="/sports">sports</Link>
-          </li>
-          <li>
-            <Link to="/science">science</Link>
-          </li>
-          <li>
-            <Link to="/health">health</Link>
-          </li>
-          <li>
-            <Link to="/world">world</Link>
-          </li>
-          <li>
-            <Link to="/nation">nation</Link>
-          </li>
-        </ul>
+        <li>
+
+          <Link className='list-item' >
+            Tech
+          </Link>
+        </li>
+        <li>
+
+          <Link className='list-item' >
+            health
+          </Link>
+        </li>
+
+
+
+        <li>
+
+          <Link className='list-item' >
+            nation
+          </Link>
+        </li>
+        <li>
+
+          <Link className='list-item' >
+            science
+          </Link>
+        </li>
+        <li>
+
+          <Link className='list-item' >
+            world
+          </Link>
+        </li>
+
+      </ul>
+
+      <div className='mobile-menu'>
+        <button><svg width={36} height={36} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg></button>
       </div>
-
-      <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-        <span className={`burger ${isMobileMenuOpen ? 'open' : ''}`}></span>
-      </div>
-
-      {/* Add the toggle theme and select language components here */}
     </div>
-  );
-};
+
+
+  )
+}
 
 const NewsArticles = () => {
   const [newsArticles, setNewsArticles] = useState([]);
@@ -182,12 +246,12 @@ function App() {
       <div >
         <Navbar />
         <Routes>
-          <Route path='/' element={<NewsArticles />} />
+          {/* <Route path='/' element={<NewsArticles />} /> */}
           <Route path="/nation" element={<NewsArticles />} />
           <Route path="/health" element={<NewsArticles />} />
         </Routes>
 
-        <NewsArticles />
+        {/* <NewsArticles /> */}
 
 
 
