@@ -1,9 +1,9 @@
 
 import './App.css';
-
+import ham from './ham.svg';
+import cross from './crossmenu.svg';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
 import { Link } from 'react-router-dom';
@@ -90,6 +90,11 @@ import './components/news.css';
 //   );
 // };
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+  const [active, setActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(()=>{},[])
   return (
 
     <div className='navbar'>
@@ -99,21 +104,22 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='brand-name'>YourNews</div>
-      <ul>
+      <ul className='main-list'>
         <li>
-          <Link className='list-item' >business
+          <Link className='list-item'to='/business' >business
           </Link>
         </li>
 
         <li>
 
-          <Link className='list-item' >
+          <Link className='list-item' to='/tech
+          ' >
             Tech
           </Link>
         </li>
         <li>
 
-          <Link className='list-item' >
+          <Link className='list-item' to='/health'>
             health
           </Link>
         </li>
@@ -122,35 +128,76 @@ const Navbar = () => {
 
         <li>
 
-          <Link className='list-item' >
+          <Link className='list-item' to='/nation' >
             nation
           </Link>
         </li>
         <li>
 
-          <Link className='list-item' >
+          <Link className='list-item' to='science'>
             science
           </Link>
         </li>
         <li>
 
-          <Link className='list-item' >
+          <Link className='list-item' to='world'>
             world
           </Link>
         </li>
 
       </ul>
 
-      <div className='mobile-menu'>
-        <button><svg width={36} height={36} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg></button>
+      <div className='navbar-mobile' >
+
+        <img id='navbar-toggle' className='navbar-toggle'
+          src={toggle ? cross : ham} alt='menu'
+          onClick={() => { setToggle(!toggle) }}
+        />
+
+        <div className='navbar-list-mobile-container' style={!toggle ? { display: 'none' } : { display: '' }}>
+          <ul className='navbar-list-mobile'>
+            <li className='navbar-list-mobile-item'>
+              <Link to='/business'
+               className='navbar-list-mobile-link' >business
+              </Link>
+            </li>
+
+            <li className='navbar-list-mobile-item'>
+              <Link to='/tech'
+              className='navbar-list-mobile-link' >
+                Tech
+              </Link>
+            </li>
+            <li className='navbar-list-mobile-item'>
+
+              <Link  to='/health' className='navbar-list-mobile-link' >
+                health
+              </Link>
+            </li>
+            <li className='navbar-list-mobile-item'>
+
+              <Link to='/nation' className='navbar-list-mobile-link' >
+                nation
+              </Link>
+            </li>
+            <li className='navbar-list-mobile-item'>
+
+              <Link to='science' className='navbar-list-mobile-link' >
+                science
+              </Link>
+            </li>
+            <li className='navbar-list-mobile-item'>
+
+              <Link to='world' className='navbar-list-mobile-link' >
+                world
+              </Link>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
     </div>
-
-
   )
 }
 
@@ -246,7 +293,7 @@ function App() {
       <div >
         <Navbar />
         <Routes>
-          {/* <Route path='/' element={<NewsArticles />} /> */}
+          <Route path='/' element={<NewsArticles />} />
           <Route path="/nation" element={<NewsArticles />} />
           <Route path="/health" element={<NewsArticles />} />
         </Routes>
