@@ -1,112 +1,46 @@
 
 import './App.css';
-import ham from './ham.svg';
-import cross from './crossmenu.svg';
+import ham from './ham.png';
+import error403 from './3805046.jpg'
+
+import cancel from './cancel.png'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
 import { Link } from 'react-router-dom';
-import logo from './news.png'
+
+import earth from './earth2.png';
 import './components/navbar.css'
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-
 import './components/news.css';
 
-
-// const Navbar = () => {
-//   return (
-//     <div className='navbar'>
-//       <div className='nav-brand-logo'>
-//         <Link to='/' >
-//           <img src={logo} alt='logo' width={80} height={80} />
-//         </Link>
-//       </div>
-
-//       <ul>
-
-
-//         <li><Link to='/business'>business</Link></li>
-//         <li><Link to='/technology'>technology</Link></li>
-//         <li><Link to='/sports'>sports</Link></li>
-//         <li><Link to='/science'>science</Link></li>
-//         <li> <Link to='/health'>health</Link> </li>
-//         <li><Link to='/world'>world</Link> </li>
-//         <li> <Link to='/nation'>nation</Link>  </li>
-//       </ul>
-//     </div>
-//   )
-// }
-
-
-// const Navbar = () => {
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-//   const toggleMobileMenu = () => {
-//     setIsMobileMenuOpen(!isMobileMenuOpen);
-//   };
-
-//   return (
-//     <div className="navbar">
-//       <div className="nav-brand-logo">
-//         <Link to="/">
-//           <img src={logo} alt="logo" width={80} height={80} />
-//         </Link>
-//       </div>
-
-//       <div className={`nav-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-//         <ul className="nav-list">
-//           <li>
-//             <Link to="/business">business</Link>
-//           </li>
-//           <li>
-//             <Link to="/technology">technology</Link>
-//           </li>
-//           <li>
-//             <Link to="/sports">sports</Link>
-//           </li>
-//           <li>
-//             <Link to="/science">science</Link>
-//           </li>
-//           <li>
-//             <Link to="/health">health</Link>
-//           </li>
-//           <li>
-//             <Link to="/world">world</Link>
-//           </li>
-//           <li>
-//             <Link to="/nation">nation</Link>
-//           </li>
-//         </ul>
-//       </div>
-
-//       <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-//         <span className={`burger ${isMobileMenuOpen ? 'open' : ''}`}></span>
-//       </div>
-
-//       {/* Add the toggle theme and select language components here */}
-//     </div>
-//   );
-// };
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [newsLanguage, setNewsLanguage] = useState('english');
+  const handleNewsLanguage = (event) => {
+    setNewsLanguage(event.target.value)
 
-  useEffect(()=>{},[])
+  }
+  useEffect(() => { }, [])
   return (
 
     <div className='navbar'>
+
       <div className="nav-brand-logo">
-        <Link to="/">
-          <img src={logo} alt="logo" width={80} height={80} />
+        <Link to="/" className='navbar-brand-logo-link'>
+          <img src={earth} className='nav-logo' alt="logo" />
         </Link>
       </div>
+
       <div className='brand-name'>YourNews</div>
+
       <ul className='main-list'>
         <li>
-          <Link className='list-item'to='/business' >business
+          <Link className='list-item' to='/business' >business
           </Link>
         </li>
 
@@ -147,10 +81,11 @@ const Navbar = () => {
 
       </ul>
 
+
       <div className='navbar-mobile' >
 
         <img id='navbar-toggle' className='navbar-toggle'
-          src={toggle ? cross : ham} alt='menu'
+          src={toggle ? cancel : ham} alt='menu'
           onClick={() => { setToggle(!toggle) }}
         />
 
@@ -158,19 +93,19 @@ const Navbar = () => {
           <ul className='navbar-list-mobile'>
             <li className='navbar-list-mobile-item'>
               <Link to='/business'
-               className='navbar-list-mobile-link' >business
+                className='navbar-list-mobile-link' >business
               </Link>
             </li>
 
             <li className='navbar-list-mobile-item'>
               <Link to='/tech'
-              className='navbar-list-mobile-link' >
+                className='navbar-list-mobile-link' >
                 Tech
               </Link>
             </li>
             <li className='navbar-list-mobile-item'>
 
-              <Link  to='/health' className='navbar-list-mobile-link' >
+              <Link to='/health' className='navbar-list-mobile-link' >
                 health
               </Link>
             </li>
@@ -197,20 +132,16 @@ const Navbar = () => {
         </div>
 
       </div>
+
     </div>
   )
 }
 
 const NewsArticles = () => {
   const [newsArticles, setNewsArticles] = useState([]);
-
+  const [error, setError] = useState('')
   const location = useLocation();
-
-  // const { category } = useParams();
-  // const categoryValue = category || 'general'; // Assuming category is an object, extract the required value
   const fetchData = async (categoryValue) => {
-
-
     try {
       let url = `https://gnews.io/api/v4/top-headlines?category=${categoryValue}&max=20&lang=hi&apikey=1af1d257ff0ae5d5d59ec47ec5ddaa1f`;
       const response = await axios.get(url);
@@ -218,7 +149,8 @@ const NewsArticles = () => {
       setNewsArticles(response.data.articles);
 
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
+      setError(error.message)
     }
   }
   useEffect(() => {
@@ -226,6 +158,16 @@ const NewsArticles = () => {
     // fetchData(categoryValue || 'general');
     fetchData(categoryValue)
   }, [location])
+
+  if (error) {
+    return (
+      <div className='image-container'>
+        <img className='responsive-image' src={error403} alt='e403' />
+
+      </div>
+    )
+
+  }
   return (
     <>
       {
@@ -285,7 +227,19 @@ const NewsArticle = ({ article }) => {
     </div>
   );
 };
-
+const Footer = () => {
+  return (
+    <footer>
+      <div className="footer-content">
+        <p>Made with
+          <span className="heart">&#x1F493;</span> by
+          <Link to='https://github.com/pvm-77' target="_blank" rel="noopener noreferrer">
+            <span className="name">Hussain Sarfaraz</span></Link>
+        </p>
+      </div>
+    </footer>
+  )
+}
 function App() {
 
   return (
@@ -297,6 +251,8 @@ function App() {
           <Route path="/nation" element={<NewsArticles />} />
           <Route path="/health" element={<NewsArticles />} />
         </Routes>
+        <Footer />
+
 
         {/* <NewsArticles /> */}
 
