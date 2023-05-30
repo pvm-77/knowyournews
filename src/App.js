@@ -248,9 +248,13 @@ function App() {
       <div >
         <Navbar />
         <Routes>
-          {/* <Route path='/' element={<NewsArticles />} /> */}
-          {/* <Route path="/nation" element={<NewsArticles />} /> */}
-          {/* <Route path="/health" element={<NewsArticles />} /> */}
+          <Route path='/' element={<NewsArticles />} />
+          <Route path="/nation" element={<NewsArticles />} />
+          <Route path="/health" element={<NewsArticles />} />
+          <Route path="/business" element={<NewsArticles />} />
+          <Route path="/tech" element={<NewsArticles />} />
+          <Route path="/world" element={<NewsArticles />} />
+          <Route path="/science" element={<NewsArticles />} />
           <Route path='*' element={<Error404/>} />
 
         </Routes>
