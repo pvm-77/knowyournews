@@ -15,6 +15,7 @@ import './components/navbar.css'
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './components/news.css';
+import Error404 from './components/Error404';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -247,9 +248,11 @@ function App() {
       <div >
         <Navbar />
         <Routes>
-          <Route path='/' element={<NewsArticles />} />
-          <Route path="/nation" element={<NewsArticles />} />
-          <Route path="/health" element={<NewsArticles />} />
+          {/* <Route path='/' element={<NewsArticles />} /> */}
+          {/* <Route path="/nation" element={<NewsArticles />} /> */}
+          {/* <Route path="/health" element={<NewsArticles />} /> */}
+          <Route path='*' element={<Error404/>} />
+
         </Routes>
         <Footer />
 

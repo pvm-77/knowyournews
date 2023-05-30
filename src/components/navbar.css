@@ -16,6 +16,7 @@
 
   display: flex;
   align-items: center;
+  border: 1px solid black;
 }
 .navbar-brand-logo-link {
   /* mobile syles here */
@@ -23,17 +24,18 @@
 }
 .nav-logo {
   /* mobile syles here */
-  max-width: 100%;
-  width: 80px;
+  /* max-width: 100%; */
+  width: 40px;
   height: auto;
 }
 
 .brand-name {
   /* mobile styles */
+  border: 1px solid red;
   text-transform: uppercase;
   margin-left: 2rem;
   margin-right: 1rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
 
   font-weight: 700;
   color: #440a47;
