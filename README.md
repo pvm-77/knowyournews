@@ -50,6 +50,11 @@ To use your own API key with KnowYourNews, follow these steps:
 5. Save the `.env` file.
 6. Restart the development server if it's already running.
 
+## Deployment
+
+The KnowYourNews application is deployed and accessible at [Vercel](https://www.vercel.com/). You can visit the deployed application by clicking [https://knowyournews.vercel.app/](https://knowyournews.vercel.app/).
+
+
 ## Creator
 
 KnowYourNews was created by Hussain Sarfaraz. You can find more projects and contact the creator on [GitHub](https://github.com/pvm-77). 
