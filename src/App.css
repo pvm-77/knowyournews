@@ -114,40 +114,7 @@
 
 
 
-footer {
-  /* box-shadow: 2rem 1rem 0 rgba(red, green, blue, 0.7); */
-  background-color: #d8caca;
-  color: #231a1a;
-  text-align: center;
-  border-top: 1px solid rgb(142, 140, 140);
-}
 
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.heart {
-  display: inline-block;
-  transform-style: preserve-3d;
-  animation: heartbeat 1s infinite;
-}
 
-.name {
-  font-weight: bold;
-  margin-left: 5px;
-  color: #282c34;
-}
 
-@keyframes heartbeat {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-  50% {
-    transform: scale3d(1.2, 1.2, 1.2);
-  }
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
-}
