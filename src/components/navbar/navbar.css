@@ -1,6 +1,5 @@
 /* mobile styes (default) */
 .navbar {
-  border: 1px solid red;
   height: 10vh;
   display: flex;
   align-items: center;
@@ -11,7 +10,7 @@
 }
 
 .nav-brand-logo {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
   display: flex;
   align-items: center;
@@ -25,7 +24,7 @@
 }
 
 .brand-name {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   text-transform: uppercase;
   margin-left: 2rem;
   margin-right: 1rem;
@@ -69,7 +68,7 @@
 }
 
 /* laptop styles */
-@media screen and (min-width: 1024px) {
+@media  (min-width: 1024px) {
   .navbar {
     /* laptops styles */
     display: flex;
@@ -87,7 +86,6 @@
     display: none;
   }
   .main-list{
-  border: 1px solid black;
     display: flex;
   }
   .nav-logo{

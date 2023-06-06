@@ -1,64 +1,69 @@
 .news-article {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width:calc(95% -12px);
-    color-scheme: dark;
-    align-content:flex-start ; 
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: calc(95% -12px);
+  color-scheme: dark;
+  align-content: flex-start;
+}
+
+.article-image {
+  border: 1px solid red;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+@media   (min-width: 768px) {
+  .article-image{
+    border: 1px solid blue;
   }
-  
-  .article-image {
-    width: 100%;
+
+}
+@media  (min-width: 1024px) {
+  .article-image{
+    border: 1px solid green;
+    image-rendering: crisp-edges;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    object-fit: contain;
-    
-  }
   
-  .article-title {
-    /* font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px; */
-    font-size: 20px;
-    font-weight: bold;
   }
-  
-  .article-author {
-    /* font-size: 14px;
-    color: #888;
-    margin-bottom: 4px; */
-  }
-  
-  .article-date {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 12px; 
-  }
-  
-  .article-description {
-    /* font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 12px; */
-  }
-  
-  a {
-    /* color: #007bff;
-    text-decoration: none; */
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .error-message {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
+}
+.article-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.article-date {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+
+/*  */
+
+
+.image-container {
+  max-width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responsive-image {
+  max-width: 100%;
+  max-height: 100%;
+}
