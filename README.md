@@ -30,7 +30,7 @@
 
 To get started with the KnowYourNews project, follow these steps:
 
-1. **Clone or Download the Repository**: Clone or download the KnowYourNews repository from the GitHub repository URL (replace `[repository-url]` with the actual URL).
+1. **Clone or Download the Repository**: Clone or download the KnowYourNews repository from the GitHub repository   [url](https://github.com/pvm-77/knowyournews) .
 2. **Install Dependencies**: Navigate to the project directory and install the required dependencies using npm or yarn.
 3. **Obtain a gnews.io API Key**: Visit [gnews.io](https://gnews.io/) and sign up for an account to obtain your gnews.io API key.
 4. **Set API Key**: Create a new file in the root directory of the project called `.env` and add the API key to the file.
